@@ -79,17 +79,17 @@ export default function Home() {
           <AnimatedSection delay={300}>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 bg-foreground text-primary-foreground px-8 py-4 text-sm tracking-wide hover:bg-foreground/90 transition-colors duration-300"
-              >
-                Get Involved
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-              <Link
                 href="/impact"
                 className="inline-flex items-center gap-2 border border-foreground text-foreground px-8 py-4 text-sm tracking-wide hover:bg-foreground hover:text-primary-foreground transition-colors duration-300"
               >
                 See Our Impact
+              </Link>
+              <Link
+                href="/gallery"
+                className="inline-flex items-center gap-2 bg-foreground text-primary-foreground px-8 py-4 text-sm tracking-wide hover:bg-foreground/90 transition-colors duration-300"
+              >
+                In Action
+                <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
           </AnimatedSection>
@@ -124,10 +124,11 @@ export default function Home() {
                 <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center mb-6 group-hover:bg-accent/20 transition-colors duration-300">
                   <Heart className="w-5 h-5 text-accent" />
                 </div>
-                <h3 className="font-serif text-2xl mb-3 text-foreground">Donations</h3>
+                <h3 className="font-serif text-2xl mb-3 text-foreground">Our Nonprofit</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Every piece of clothing donated directly supports communities in
-                  need, creating tangible impact where it matters most.
+                  KarmaKloth is a student-led nonprofit providing financial and
+                  clothing aid to underprivileged areas—created to effect positive
+                  change in society.
                 </p>
               </div>
             </AnimatedSection>
@@ -137,10 +138,11 @@ export default function Home() {
                 <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center mb-6 group-hover:bg-accent/20 transition-colors duration-300">
                   <Globe className="w-5 h-5 text-accent" />
                 </div>
-                <h3 className="font-serif text-2xl mb-3 text-foreground">Global Reach</h3>
+                <h3 className="font-serif text-2xl mb-3 text-foreground">What We Focus On</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Spreading our mission internationally, with a special focus on
-                  South Asian communities and beyond.
+                  We focus on helping South Asian communities, while working to
+                  bridge the global clothing crisis through selling clothes,
+                  donations, and clothing drives.
                 </p>
               </div>
             </AnimatedSection>
@@ -150,10 +152,11 @@ export default function Home() {
                 <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center mb-6 group-hover:bg-accent/20 transition-colors duration-300">
                   <Users className="w-5 h-5 text-accent" />
                 </div>
-                <h3 className="font-serif text-2xl mb-3 text-foreground">Community</h3>
+                <h3 className="font-serif text-2xl mb-3 text-foreground">Impact So Far</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Building connections through frequent clothing drives, workshops,
-                  and community engagement events.
+                  So far, we’ve been able to donate to local shelters in Michigan,
+                  Bangladesh, and India—turning community support into real-world
+                  aid.
                 </p>
               </div>
             </AnimatedSection>
@@ -189,7 +192,7 @@ export default function Home() {
 
               <AnimatedSection delay={300}>
                 <Link
-                  href="/events"
+                  href="/impact#upcoming-events"
                   className="inline-flex items-center gap-2 text-foreground text-sm tracking-wide group"
                 >
                   View Upcoming Events
@@ -203,10 +206,8 @@ export default function Home() {
                 <ul className="space-y-6">
                   {[
                     "Frequent clothing drives in local communities",
-                    "Interactive workshops on sustainable fashion",
                     "Partnership programs with international organizations",
-                    "Youth engagement and education initiatives",
-                    "Seasonal collection launches for impact funding",
+                    "Youth engagement and volunteering initiatives",
                   ].map((item, index) => (
                     <li
                       key={index}

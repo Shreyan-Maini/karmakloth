@@ -93,69 +93,62 @@ function AnimatedCounter({ target, suffix = "" }: { target: number; suffix?: str
   );
 }
 
-const impactStats = [
+const impactEvents = [
   {
-    number: 18000,
-    suffix: "+",
-    label: "Clothing Items Donated",
-    description: "Pieces of clothing collected and distributed to communities in need",
+    title: "First Clothing Drive",
+    date: "June 1–8, 2024",
+    highlight: "~600 articles",
+    description: "Our first community clothing drive.",
   },
   {
-    number: 3,
-    suffix: "",
-    label: "Partner Organizations",
-    description: "Local and international partners helping us expand our reach",
+    title: "Toy and Clothing Drive",
+    date: "Oct 21 – Nov 11, 2024",
+    highlight: "~700 articles (toys + clothes)",
+    description: "Combined toy and clothing collection for families in need.",
   },
   {
-    number: 500,
-    suffix: "+",
-    label: "Families Supported",
-    description: "Families who have received clothing through our programs",
+    title: "Sterling Heights Community Networking Event",
+    date: "March 7, 2025",
+    highlight: "Community event",
+    description: "Connected with local partners and community leaders.",
   },
   {
-    number: 25,
-    suffix: "",
-    label: "Events Hosted",
-    description: "Clothing drives, workshops, and community events organized",
+    title: "Troy CC Clothing Drive",
+    date: "May 19–27, 2025",
+    highlight: "~500 donations",
+    description: "Clothing donations collected with community support.",
   },
-];
+  {
+    title: "Brandy 5K",
+    date: "August 15, 2025",
+    highlight: "~$4k raised",
+    description: "Proceeds went to the American Foundation for Suicide Prevention.",
+  },
+  {
+    title: "MSU Clothing Drive",
+    date: "Nov 1–8, 2025",
+    highlight: "~8k articles",
+    description: "Large-scale campus clothing drive and collection.",
+  },
+  {
+    title: "WSU Clothing Drive",
+    date: "Dec 1–5, 2025",
+    highlight: "~595 articles",
+    description: "Campus clothing drive supporting community distribution.",
+  },
+] as const;
 
-const stories = [
-  {
-    quote:
-      "Karma Kloth helped our community center provide winter clothing to over 100 families last season. The impact was immediate and meaningful.",
-    author: "Community Partner",
-    location: "Local Community Center",
-  },
-  {
-    quote:
-      "The sustainable fashion workshop changed how our students think about clothing and waste. It was educational and inspiring.",
-    author: "School Administrator",
-    location: "High School Program",
-  },
-  {
-    quote:
-      "Working with Karma Kloth has allowed us to extend our reach to communities we could not serve before. Their dedication is remarkable.",
-    author: "NGO Director",
-    location: "International Partner",
-  },
-];
+const listedDriveArticlesTotal = 600 + 700 + 500 + 8000 + 595; // excludes the networking event (no count) and the 5K ($ raised)
+const listedFundsRaisedTotal = 4000;
 
-const goals = [
+const upcomingEvents = [
   {
-    title: "100,000 Items by 2027",
+    title: "No upcoming events",
+    date: "Check back soon",
     description:
-      "We aim to collect and distribute 10,000 pieces of clothing by the end of 2027.",
-    progress: 25,
+      "We’re planning our next drive and community events now. Follow along and check back for dates and locations.",
   },
-  {
-    title: "Global Expansion",
-    description:
-      "Establish partnerships in 10 new countries, focusing on South Asian communities.",
-    progress: 60,
-  },
-  
-];
+] as const;
 
 export default function ImpactPage() {
   return (
@@ -186,94 +179,92 @@ export default function ImpactPage() {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-20 px-6 bg-foreground text-primary-foreground">
+      {/* Events Section */}
+      <section className="py-20 px-6">
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
-            {impactStats.map((stat, index) => (
-              <AnimatedSection key={stat.label} delay={index * 100}>
-                <div className="text-center">
-                  <div className="font-serif text-5xl md:text-6xl mb-2">
-                    <AnimatedCounter target={stat.number} suffix={stat.suffix} />
+          <AnimatedSection>
+            <p className="text-sm uppercase tracking-[0.3em] text-muted-foreground mb-4">
+              On-the-ground Impact
+            </p>
+            <h2 className="font-serif text-4xl md:text-5xl leading-tight text-foreground mb-16">
+              Recent drives & events
+            </h2>
+          </AnimatedSection>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {impactEvents.map((event, index) => (
+              <AnimatedSection key={event.title} delay={100 + index * 75}>
+                <div className="bg-secondary p-8 h-full">
+                  <div className="flex items-start justify-between gap-6 mb-6">
+                    <div>
+                      <h3 className="font-serif text-2xl text-foreground mb-2">
+                        {event.title}
+                      </h3>
+                      <p className="text-sm text-muted-foreground">{event.date}</p>
+                    </div>
+                    <div className="shrink-0 text-right">
+                      <p className="font-serif text-2xl text-accent whitespace-nowrap">
+                        {event.highlight}
+                      </p>
+                    </div>
                   </div>
-                  <h3 className="text-lg font-medium mb-2">{stat.label}</h3>
-                  <p className="text-primary-foreground/60 text-sm leading-relaxed">
-                    {stat.description}
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    {event.description}
                   </p>
                 </div>
               </AnimatedSection>
             ))}
           </div>
+
+          <AnimatedSection delay={650}>
+            <div className="mt-12 bg-foreground text-primary-foreground p-8">
+              <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8">
+                <div>
+                  <p className="text-sm uppercase tracking-[0.3em] text-primary-foreground/70 mb-3">
+                    Totals (events listed above)
+                  </p>
+                  <h3 className="font-serif text-3xl md:text-4xl leading-tight">
+                    <AnimatedCounter target={listedDriveArticlesTotal} suffix="+" />{" "}
+                    articles collected
+                  </h3>
+                </div>
+                <div className="md:text-right">
+                  <p className="text-primary-foreground/70 text-sm mb-2">
+                    Funds raised (Brandy 5K)
+                  </p>
+                  <p className="font-serif text-3xl md:text-4xl">
+                    ${listedFundsRaisedTotal.toLocaleString()}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </AnimatedSection>
         </div>
       </section>
 
-      {/* Stories Section */}
-      <section className="py-20 px-6">
+      {/* Upcoming Events Section */}
+      <section id="upcoming-events" className="py-20 px-6 bg-secondary">
         <div className="max-w-6xl mx-auto">
           <AnimatedSection>
             <p className="text-sm uppercase tracking-[0.3em] text-muted-foreground mb-4">
-              Voices of Impact
+              Mark Your Calendar
             </p>
             <h2 className="font-serif text-4xl md:text-5xl leading-tight text-foreground mb-16">
-              Stories from our community
+              Upcoming events
             </h2>
           </AnimatedSection>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {stories.map((story, index) => (
-              <AnimatedSection key={story.author} delay={100 + index * 100}>
-                <div className="bg-secondary p-8 h-full flex flex-col">
-                  <blockquote className="font-serif text-lg italic text-foreground leading-relaxed flex-1 mb-6">
-                    &ldquo;{story.quote}&rdquo;
-                  </blockquote>
-                  <div>
-                    <p className="font-medium text-foreground">{story.author}</p>
-                    <p className="text-sm text-muted-foreground">
-                      {story.location}
-                    </p>
-                  </div>
-                </div>
-              </AnimatedSection>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Goals Section */}
-      <section className="py-20 px-6 bg-secondary">
-        <div className="max-w-4xl mx-auto">
-          <AnimatedSection>
-            <p className="text-sm uppercase tracking-[0.3em] text-muted-foreground mb-4">
-              Looking Forward
-            </p>
-            <h2 className="font-serif text-4xl md:text-5xl leading-tight text-foreground mb-16">
-              Our Goals
-            </h2>
-          </AnimatedSection>
-
-          <div className="space-y-12">
-            {goals.map((goal, index) => (
-              <AnimatedSection key={goal.title} delay={100 + index * 100}>
-                <div>
-                  <div className="flex justify-between items-start mb-4">
-                    <div>
-                      <h3 className="font-serif text-2xl mb-2 text-foreground">
-                        {goal.title}
-                      </h3>
-                      <p className="text-muted-foreground text-sm">
-                        {goal.description}
-                      </p>
-                    </div>
-                    <span className="text-2xl font-serif text-accent">
-                      {goal.progress}%
-                    </span>
-                  </div>
-                  <div className="h-2 bg-muted rounded-full overflow-hidden">
-                    <div
-                      className="h-full bg-accent transition-all duration-1000 ease-out rounded-full"
-                      style={{ width: `${goal.progress}%` }}
-                    />
-                  </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {upcomingEvents.map((event, index) => (
+              <AnimatedSection key={event.title} delay={100 + index * 100}>
+                <div className="bg-background p-8 md:p-12">
+                  <p className="text-sm text-accent mb-3">{event.date}</p>
+                  <h3 className="font-serif text-2xl md:text-3xl mb-4 text-foreground">
+                    {event.title}
+                  </h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {event.description}
+                  </p>
                 </div>
               </AnimatedSection>
             ))}
@@ -306,10 +297,10 @@ export default function ImpactPage() {
                 Get Involved
               </a>
               <a
-                href="/events"
+                href="/gallery"
                 className="inline-flex items-center gap-2 border border-foreground text-foreground px-8 py-4 text-sm tracking-wide hover:bg-foreground hover:text-primary-foreground transition-colors duration-300"
               >
-                View Events
+                In Action
               </a>
             </div>
           </AnimatedSection>

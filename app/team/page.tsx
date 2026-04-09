@@ -107,8 +107,6 @@ const executiveBoard: Array<{
   { name: "Samuel Vu", role: "Board Chair", image: "/team/sam.JPG" },
   { name: "Mikaela Espinoza", role: "Fundraising Chair", image: "/team/mikaela.jpeg" },
   { name: "Mina Atto", role: "Event Chair", image: "/team/mina.jpeg" },
-  { name: "Jonah Necklace", role: "Expansion Chair", image: "/team/jonah.jpeg" },
-  { name: "Taali Mohindra", role: "Creative Design Chair", image: "/team/taali.jpeg" },
   { name: "Mohon Chowdhury", role: "Creative Design Chair", image: "/team/mohon.jpg" },
   { name: "Raul Oraha", role: "Social Media Chair", image: "/team/raul.JPG" },
   { name: "Shreyan Maini", role: "Secondary Board Chair", image: "/team/shreyan.jpg" },

@@ -133,7 +133,7 @@ export default function ContactPage() {
                         href="mailto:"
                         className="text-muted-foreground hover:text-accent transition-colors duration-300"
                       >
-                        hello@karmakloth.org
+                        klothkarma@gmail.com
                       </a>
                     </div>
                   </div>
