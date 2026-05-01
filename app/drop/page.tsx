@@ -225,7 +225,7 @@ export default function DropPage() {
                     {DROP.subtitle}
                   </p>
 
-                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-violet-300/60 bg-violet-100/65 text-violet-900 text-xs uppercase tracking-[0.2em]">
+                  <div className="inline-flex items-center px-4 py-2 rounded-full border border-violet-300/60 bg-violet-100/65 text-violet-900 text-xs uppercase tracking-[0.2em]">
                     Drops July 1st
                   </div>
                 </div>
