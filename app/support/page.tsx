@@ -16,7 +16,7 @@ export default function SupportPage() {
               Help power Karma Kloth
             </h1>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Donate directly below without leaving the website.
+              Donate directly below.
             </p>
           </div>
 
