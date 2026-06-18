@@ -192,7 +192,7 @@ export default function Home() {
 
               <AnimatedSection delay={300}>
                 <Link
-                  href="/impact#upcoming-events"
+                  href="/upcoming-events"
                   className="inline-flex items-center gap-2 text-foreground text-sm tracking-wide group"
                 >
                   View Upcoming Events

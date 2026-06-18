@@ -141,14 +141,6 @@ const impactEvents = [
 const listedDriveArticlesTotal = 600 + 700 + 500 + 8000 + 595; // excludes the networking event (no count) and the 5K ($ raised)
 const listedFundsRaisedTotal = 4000;
 
-const upcomingEvents = [
-  {
-    title: "No upcoming events",
-    date: "Check back soon",
-    description:
-      "We’re planning our next drive and community events now. Follow along and check back for dates and locations.",
-  },
-] as const;
 
 export default function ImpactPage() {
   return (
@@ -239,36 +231,6 @@ export default function ImpactPage() {
               </div>
             </div>
           </AnimatedSection>
-        </div>
-      </section>
-
-      {/* Upcoming Events Section */}
-      <section id="upcoming-events" className="py-20 px-6 bg-secondary">
-        <div className="max-w-6xl mx-auto">
-          <AnimatedSection>
-            <p className="text-sm uppercase tracking-[0.3em] text-muted-foreground mb-4">
-              Mark Your Calendar
-            </p>
-            <h2 className="font-serif text-4xl md:text-5xl leading-tight text-foreground mb-16">
-              Upcoming events
-            </h2>
-          </AnimatedSection>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {upcomingEvents.map((event, index) => (
-              <AnimatedSection key={event.title} delay={100 + index * 100}>
-                <div className="bg-background p-8 md:p-12">
-                  <p className="text-sm text-accent mb-3">{event.date}</p>
-                  <h3 className="font-serif text-2xl md:text-3xl mb-4 text-foreground">
-                    {event.title}
-                  </h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    {event.description}
-                  </p>
-                </div>
-              </AnimatedSection>
-            ))}
-          </div>
         </div>
       </section>
 
