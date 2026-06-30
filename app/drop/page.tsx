@@ -48,12 +48,8 @@ const DROP = {
   subtitle: "A limited release is coming soon.",
   // Update this when you have a date/time.
   releaseAtISO: "2026-07-01T16:00:00Z",
-  // Put your design images at:
-  // - public/drop/left.png
-  // - public/drop/right.png
-  // (or change the filenames here)
-  leftDesignSrc: "/drop/left.png",
-  rightDesignSrc: "/drop/right.png",
+  leftDesignSrc: "/drop/front.png",
+  rightDesignSrc: "/drop/back.png",
 } as const;
 
 function formatCountdown(ms: number) {
@@ -95,26 +91,15 @@ function DesignSlot({
           </div>
         </div>
       </div>
-      <div className="relative w-full aspect-[3/4] overflow-hidden bg-violet-100/55 border border-violet-200/70">
+      <div className="relative w-full aspect-[3/4] overflow-hidden bg-white border border-violet-200/70">
         <Image
           src={src}
           alt=""
           fill
           sizes="(max-width: 1024px) 40vw, 420px"
-          className={`object-contain transition duration-500 ${
-            isLive ? "blur-0" : "blur-sm scale-[1.02]"
-          }`}
+          className="object-contain transition duration-500"
           onError={onMissing}
         />
-        {!isLive ? (
-          <div className="absolute inset-0 flex items-end">
-            <div className="w-full p-4">
-              <div className="inline-flex items-center gap-2 bg-background/85 text-foreground backdrop-blur px-3 py-2 text-xs tracking-wide border border-border/70">
-                Preview locked
-              </div>
-            </div>
-          </div>
-        ) : null}
       </div>
     </div>
   );
@@ -265,6 +250,16 @@ export default function DropPage() {
                     </div>
                   )}
 
+                  <div className="mt-6">
+                    <a
+                      href="https://buy.stripe.com/bJe5kE8z07uUdsh7Bd6Vq05"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center w-full bg-foreground text-background px-8 py-4 text-sm tracking-wide hover:bg-foreground/90 transition-colors duration-300"
+                    >
+                      Buy Now
+                    </a>
+                  </div>
                 </div>
               </AnimatedSection>
             </div>
@@ -308,6 +303,63 @@ export default function DropPage() {
             </AnimatedSection>
           </div>
 
+        </div>
+      </section>
+
+      {/* Model editorial section */}
+      <section className="py-24 px-6 bg-background overflow-hidden">
+        <div className="max-w-6xl mx-auto">
+          <AnimatedSection>
+            <p className="text-sm uppercase tracking-[0.3em] text-muted-foreground mb-16">
+              Worn &amp; Loved
+            </p>
+          </AnimatedSection>
+
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-6 items-start">
+            {/* Large left photo — pushed down slightly for visual tension */}
+            <AnimatedSection delay={100} className="md:col-span-7 md:mt-16">
+              <div className="relative overflow-hidden group">
+                <Image
+                  src="/drop/one.png"
+                  alt="Model wearing KarmaKloth drop"
+                  width={900}
+                  height={1125}
+                  className="w-full object-cover grayscale-[15%] group-hover:grayscale-0 transition-all duration-700"
+                />
+              </div>
+            </AnimatedSection>
+
+            {/* Two stacked right photos */}
+            <div className="md:col-span-5 flex flex-col gap-4 md:gap-6">
+              <AnimatedSection delay={200}>
+                <div className="relative overflow-hidden group">
+                  <Image
+                    src="/drop/two.png"
+                    alt="Model wearing KarmaKloth drop"
+                    width={600}
+                    height={750}
+                    className="w-full object-cover grayscale-[15%] group-hover:grayscale-0 transition-all duration-700"
+                  />
+                </div>
+              </AnimatedSection>
+
+              <AnimatedSection delay={300}>
+                <div className="relative overflow-hidden group">
+                  <Image
+                    src="/drop/three.png"
+                    alt="Model wearing KarmaKloth drop"
+                    width={600}
+                    height={750}
+                    className="w-full object-cover grayscale-[15%] group-hover:grayscale-0 transition-all duration-700"
+                  />
+                  {/* Corner label */}
+                  <div className="absolute bottom-4 right-4 bg-background/85 backdrop-blur px-3 py-2 text-xs uppercase tracking-[0.2em] text-foreground border border-border/60">
+                    First Drop
+                  </div>
+                </div>
+              </AnimatedSection>
+            </div>
+          </div>
         </div>
       </section>
 

@@ -110,6 +110,7 @@ const executiveBoard: Array<{
   { name: "Mohon Chowdhury", role: "Creative Design Chair", image: "/team/mohon.jpg" },
   { name: "Raul Oraha", role: "Social Media Chair", image: "/team/raul.JPG" },
   { name: "Shreyan Maini", role: "Secondary Board Chair", image: "/team/shreyan.jpg" },
+  { name: "Elizabeth St Martin", role: "Graphic Designer", image: "/team/elizabeth.png" },
 ];
 
 export default function TeamPage() {

@@ -53,7 +53,7 @@ const chapters = [
     accentColor: "#ffffff",
     lead: "Krishna Shastri",
     role: "Chapter Lead",
-    email: "krishna@karmakloth.org",
+    email: "shastri5@msu.edu",
     logo: "/miscellaneous/msu.png",
   },
   {
@@ -62,7 +62,7 @@ const chapters = [
     accentColor: "#00274C",
     lead: "Ansh Malhotra",
     role: "Chapter Lead",
-    email: "ansh@karmakloth.org",
+    email: "anshmalh@umich.edu",
     logo: "/miscellaneous/umich.png",
   },
   {
@@ -71,7 +71,7 @@ const chapters = [
     accentColor: "#0C5449",
     lead: "Mohon Chowdhury",
     role: "Chapter Lead",
-    email: "mohon@karmakloth.org",
+    email: "mohonch12@gmail.com",
     logo: "/miscellaneous/wayne.png",
   },
 ] as const;

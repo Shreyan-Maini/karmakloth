@@ -22,7 +22,10 @@ const navLinks: NavItem[] = [
   {
     href: "/impact",
     label: "Impact",
-    children: [{ href: "/upcoming-events", label: "Upcoming Events" }],
+    children: [
+      { href: "/impact", label: "Impact" },
+      { href: "/upcoming-events", label: "Upcoming Events" },
+    ],
   },
   { href: "/contact", label: "Contact" },
 ];
